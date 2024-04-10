@@ -11,8 +11,10 @@ jobs:
         with:
           fetch-depth: 1
       - name: Build, push, and verify image
+        env:
+          RELEVANT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           echo ${{ secrets.PACKAGES_TOKEN }} | docker login docker.pkg.github.com -u ces-khanhhoang --password-stdin
-          docker build --tag docker.pkg.github.com/ces-khanhhoang/drupal10-test:${GITHUB_SHA} .
-          docker push docker.pkg.github.com/ces-khanhhoang/drupal10-test:${GITHUB_SHA}
-          docker pull docker.pkg.github.com/ces-khanhhoang/drupal10-test:${GITHUB_SHA}
+          docker build --tag docker.pkg.github.com/ces-khanhhoang/drupal10-test:$RELEVANT_SHA
+          docker push docker.pkg.github.com/ces-khanhhoang/drupal10-test:$RELEVANT_SHA
+          docker pull docker.pkg.github.com/ces-khanhhoang/drupal10-test:$RELEVANT_SHA
