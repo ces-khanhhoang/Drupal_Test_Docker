@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Freshteam module.
+ */
+
+/**
+ * Implements hook_theme() for main pages.
+ */
+function freshteam_theme()
+{
+  return [
+    'jobs_list' => [
+      'template' => 'jobs-list',
+      'variables' => [
+        'data' => [],
+      ],
+    ],
+  ];
+}
