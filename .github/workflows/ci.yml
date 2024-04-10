@@ -1,0 +1,18 @@
+on:
+  push:
+    branches:
+      - master
+name: Build
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: Build, push, and verify image
+        run: |
+          echo ${{ secrets.PACKAGES_TOKEN }} | docker login docker.pkg.github.com -u hoangkhanh --password-stdin
+          docker build --tag docker.pkg.github.com/hoangkhanh/drupal10-test:${GITHUB_SHA} .
+          docker push docker.pkg.github.com/hoangkhanh/drupal10-test:${GITHUB_SHA}
+          docker pull docker.pkg.github.com/hoangkhanh/drupal10-test:${GITHUB_SHA}
