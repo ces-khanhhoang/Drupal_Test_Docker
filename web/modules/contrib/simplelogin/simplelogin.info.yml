@@ -1,0 +1,9 @@
+name: Simple Login
+description: Simple Login, Register, Password Reset with Background Image.
+type: module
+configure: simplelogin.admin_settings_form
+core_version_requirement: ^9.3 || ^10
+# Information added by Drupal.org packaging script on 2023-09-06
+version: '7.0.0'
+project: 'simplelogin'
+datestamp: 1694009997

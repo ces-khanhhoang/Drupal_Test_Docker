@@ -1,0 +1,13 @@
+name: 'COOKiES Google Analytics'
+type: module
+description: 'Submodule of COOKiES to manage Google Analytics inside of COOKiES consent management.'
+core_version_requirement: ^9.3 || ^10
+package: 'COOKiES'
+dependencies:
+  - cookies:cookies
+  - google_analytics:google_analytics (^4)
+
+# Information added by Drupal.org packaging script on 2024-03-18
+version: '1.2.12'
+project: 'cookies'
+datestamp: 1710755766

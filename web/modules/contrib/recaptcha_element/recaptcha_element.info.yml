@@ -1,0 +1,10 @@
+name: ReCaptcha Element
+type: module
+description: Provides a Google reCAPTCHA element.
+package: Spam control
+core_version_requirement: ^9.3 || ^10
+
+# Information added by Drupal.org packaging script on 2022-05-05
+version: '1.0.9'
+project: 'recaptcha_element'
+datestamp: 1651756305

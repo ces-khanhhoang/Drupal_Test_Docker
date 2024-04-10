@@ -1,0 +1,4 @@
+'edit webform spam words':
+  title: 'Edit webform spam words configuration'
+  description: 'Editing webform spam words configuration allows users to update spam words, webform error message and fields attached.'
+  restrict access: true

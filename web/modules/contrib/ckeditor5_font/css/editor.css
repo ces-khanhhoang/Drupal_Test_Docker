@@ -1,0 +1,182 @@
+#ckeditor-ui-colors-panel > div:last-child {
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  --shadow-color: 0deg 0% 49%;
+  --shadow-elevation-medium:
+          .3px .5px .7px hsl(var(--shadow-color) / 0.36),
+          .8px 1.6px 2px -.8px hsl(var(--shadow-color) / 0.36),
+          2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+          5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-low:
+          0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+          0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+          1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+
+#ckeditor-ui-colors-panel .color {
+  color: #000;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-elevation-low);
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+#ckeditor-ui-colors-panel .color .label{
+  padding: 5px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: var(--shadow-elevation-low);
+}
+
+#ckeditor-ui-colors-panel .color .delete-action {
+  cursor: pointer;
+  display: inline-block;
+  background: #fff;
+  border-radius: 100%;
+
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  padding: 5px;
+  box-shadow: var(--shadow-elevation-medium);
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+#ckeditor-ui-colors-panel .color:hover {
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+#ckeditor-ui-colors-panel .color:hover .delete-action {
+  transition: opacity .35s ease-in-out;
+  opacity: 1;
+}
+
+#ckeditor-ui-colors-panel .color .delete-action:hover:after {
+  opacity: 1;
+}
+
+#ckeditor-ui-colors-panel .color .delete-action:after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  opacity: .5;
+
+  background-size: cover;
+  background-image: url("data:image/svg+xml;base64,PCEtLSBHZW5lcmF0ZWQgYnkgSWNvTW9vbi5pbyAtLT4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9Ijc2OCIgaGVpZ2h0PSI3NjgiIHZpZXdCb3g9IjAgMCA3NjggNzY4Ij4KPHRpdGxlPjwvdGl0bGU+CjxnIGlkPSJpY29tb29uLWlnbm9yZSI+CjwvZz4KPHBhdGggZD0iTTU3NiAyMjR2NDE2YzAgOC44MzItMy41NTIgMTYuOC05LjM3NiAyMi42MjRzLTEzLjc5MiA5LjM3Ni0yMi42MjQgOS4zNzZoLTMyMGMtOC44MzIgMC0xNi44LTMuNTUyLTIyLjYyNC05LjM3NnMtOS4zNzYtMTMuNzkyLTkuMzc2LTIyLjYyNHYtNDE2ek01NDQgMTYwdi0zMmMwLTI2LjQ5Ni0xMC43ODQtNTAuNTYtMjguMTI4LTY3Ljg3MnMtNDEuMzc2LTI4LjEyOC02Ny44NzItMjguMTI4aC0xMjhjLTI2LjQ5NiAwLTUwLjU2IDEwLjc4NC02Ny44NzIgMjguMTI4cy0yOC4xMjggNDEuMzc2LTI4LjEyOCA2Ny44NzJ2MzJoLTEyOGMtMTcuNjY0IDAtMzIgMTQuMzM2LTMyIDMyczE0LjMzNiAzMiAzMiAzMmgzMnY0MTZjMCAyNi40OTYgMTAuNzg0IDUwLjU2IDI4LjEyOCA2Ny44NzJzNDEuMzc2IDI4LjEyOCA2Ny44NzIgMjguMTI4aDMyMGMyNi40OTYgMCA1MC41Ni0xMC43ODQgNjcuODcyLTI4LjEyOHMyOC4xMjgtNDEuMzc2IDI4LjEyOC02Ny44NzJ2LTQxNmgzMmMxNy42NjQgMCAzMi0xNC4zMzYgMzItMzJzLTE0LjMzNi0zMi0zMi0zMnpNMjg4IDE2MHYtMzJjMC04LjgzMiAzLjU1Mi0xNi44IDkuMzc2LTIyLjYyNHMxMy43OTItOS4zNzYgMjIuNjI0LTkuMzc2aDEyOGM4LjgzMiAwIDE2LjggMy41NTIgMjIuNjI0IDkuMzc2czkuMzc2IDEzLjc5MiA5LjM3NiAyMi42MjR2MzJ6TTI4OCAzNTJ2MTkyYzAgMTcuNjY0IDE0LjMzNiAzMiAzMiAzMnMzMi0xNC4zMzYgMzItMzJ2LTE5MmMwLTE3LjY2NC0xNC4zMzYtMzItMzItMzJzLTMyIDE0LjMzNi0zMiAzMnpNNDE2IDM1MnYxOTJjMCAxNy42NjQgMTQuMzM2IDMyIDMyIDMyczMyLTE0LjMzNiAzMi0zMnYtMTkyYzAtMTcuNjY0LTE0LjMzNi0zMi0zMi0zMnMtMzIgMTQuMzM2LTMyIDMyeiI+PC9wYXRoPgo8L3N2Zz4K");
+
+}
+
+#ckeditor-ui-colors-panel .color .delete-action:active {
+  transform: scale(.9);
+}
+
+#ckeditor-ui-colors-panel .color.add {
+  background: #edf0f1;
+  border: 1px solid #dfe5e5;
+  transform: scale(.8);
+}
+
+#ckeditor-ui-colors-panel .color.add .add-action {
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml;base64,PCEtLSBHZW5lcmF0ZWQgYnkgSWNvTW9vbi5pbyAtLT4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMjQiIGhlaWdodD0iMTAyNCIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCI+Cjx0aXRsZT48L3RpdGxlPgo8ZyBpZD0iaWNvbW9vbi1pZ25vcmUiPgo8L2c+CjxwYXRoIGQ9Ik0wIDEwMDcuMzI4YzAgOC44MzIgNy4xNjggMTYgMTYgMTZoOTk1LjU1MmMyLjE0NCAwIDQuMjI0LTAuNDE2IDYuMTc2LTEuMjQ4czMuNzEyLTIuMDE2IDUuMTg0LTMuNDg4YzAuMDMyLTAuMDMyIDAuMDY0LTAuMDMyIDAuMDk2LTAuMDY0IDAuMDk2LTAuMDk2IDAuMDk2LTAuMjg4IDAuMjI0LTAuMzg0IDEuNjMyLTEuNzYgMi42ODgtMy45MDQgMy40MjQtNi4yNCAwLjIyNC0wLjczNiAwLjMyLTEuNDQgMC40NDgtMi4yMDggMC4xMjgtMC44IDAuNDgtMS41MDQgMC40OC0yLjMzNiAwLTEuMjgtMC40NDgtMi40LTAuNzM2LTMuNTg0LTAuMDk2LTAuNDQ4IDAuMDk2LTAuODk2LTAuMDY0LTEuMzQ0bC0xMDEuMTItMzEwLjg4Yy0wLjc2OC0yLjQtMi4xMTItNC42MDgtMy45MDQtNi4zNjhsLTU0Ny43NDQtNTQ3Ljc3NmMtMC41NzYtMC44OTYtMC45OTItMS44NTYtMS43Ni0yLjY1NmwtMTE5LjY0OC0xMTkuNjQ4Yy0xOS40MjQtMTkuNDI0LTUxLjA0MC0xOS40MjQtNzAuNDk2IDBsLTE2Ny41MiAxNjcuNTJjLTkuNDA4IDkuNDA4LTE0LjU5MiAyMS45Mi0xNC41OTIgMzUuMjMyczUuMTg0IDI1Ljg1NiAxNC41OTIgMzUuMjY0bDExNi45OTIgMTE2Ljk5MmMwLjU3NiAwLjg2NCAwLjk2IDEuODU2IDEuNzI4IDIuNjI0bDU0Ni44OCA1NTAuNTZjMS44ODggMS45MiA0LjE5MiAzLjI5NiA2Ljc4NCA0LjA2NGwyMTQuODE2IDY0aC04ODUuNzkyYy04LjgzMi0wLjAzMi0xNiA3LjEzNi0xNiAxNS45Njh6TTIwMy41ODQgMzI1LjE1Mmw1MDEuOTg0IDQ5NS41NTItMTguNDY0IDY0LjA2NC01MTkuODQtNTIzLjI5NiAzNi4zMi0zNi4zMnpNNzMwLjExMiA4MDBsLTUwMy45MzYtNDk3LjQ0IDc3Ljk4NC03Ny45ODQgNDk5LjQyNCA1MDAuNzM2djc0LjY4OGgtNzMuNDcyek04MjMuNTIgNzAwbC00OTYuNzM2LTQ5OC4wNDggMzMuMjQ4LTMzLjI0OCA1MTguNzUyIDUxOC43NTItNTUuMjY0IDEyLjU0NHpNNzM1LjYxNiA4MzJoODMuOTY4YzguODMyIDAgMTYtNy4xNjggMTYtMTZ2LTg1LjkybDY0LjIyNC0xNC41OTIgODcuMTM2IDI2Ny44NC0yNzEuNjE2LTgwLjkyOCAyMC4yODgtNzAuNHpNMzIgMjE3Ljg1NmMwLTQuNzY4IDEuODU2LTkuMjE2IDUuMjE2LTEyLjYwOGwxNjcuNTItMTY3LjUyYzYuOTQ0LTYuOTQ0IDE4LjI0LTYuOTc2IDI1LjI0OCAwbDEwNy45MDQgMTA3LjkwNC0xOTIuNzM2IDE5Mi43MzYtMTA3LjkwNC0xMDcuOTA0Yy0zLjM5Mi0zLjM2LTUuMjQ4LTcuODQtNS4yNDgtMTIuNjA4eiI+PC9wYXRoPgo8L3N2Zz4K");
+  background-size: cover;
+  opacity: .5;
+  transition: transform .2s ease-out;
+}
+
+#ckeditor-ui-colors-panel .color.add:hover .add-action {
+  transform: scale(1.3);
+}
+
+#ckeditor-ui-colors-panel .color.add:active {
+  transform: scale(.7);
+}
+
+#ckeditor-ui-colors-panel .color + .new-color-panel {
+  margin-top: 2rem;
+}
+
+#ckeditor-ui-new-color-panel {
+  width: 100%;
+  padding: 2rem;
+  background: #edf0f1;
+  border: 1px solid #dfe5e5;
+
+  border-radius: .5rem;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-elevation-low);
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#ckeditor-ui-new-color-panel .form-item {
+  margin: 0 1rem 0 0;
+}
+
+#ckeditor-ui-new-color-panel .form-item input {
+  min-height: 50px;
+}
+
+#ckeditor-ui-new-color-panel .form-item label {
+  margin-bottom: .5rem;
+  display: block;
+}
+
+#ckeditor-ui-new-color-panel .form-item input[type="color"] {
+  padding: 5px;
+}
+
+@media (max-width: 1024px) {
+
+  #ckeditor-ui-colors-panel > div:last-child {
+    justify-content: space-around;
+    margin: 1rem 0;
+    padding: 0;
+  }
+
+  #ckeditor-ui-colors-panel .color {
+    width: 100px;
+    height: 100px;
+    padding: .8rem;
+    font-size: 1rem;
+  }
+
+  #ckeditor-ui-new-color-panel .form-item {
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+
+  #ckeditor-ui-new-color-panel .form-item input {
+    width: 100%;
+  }
+
+  #ckeditor-ui-new-color-panel .form-item .form-submit-label {
+    display: none;
+  }
+
+  #ckeditor-ui-new-color-panel .form-item .form-submit {
+    width: 100%;
+    padding: 1rem 0;
+    margin: 0;
+  }
+}

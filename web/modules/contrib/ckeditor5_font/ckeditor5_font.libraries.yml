@@ -1,0 +1,17 @@
+ckeditor5_font:
+  remote: https://github.com/ckeditor/ckeditor5
+  version: "31.0.0"
+  license:
+    name: GNU-GPL-2.0-or-later
+    url: https://ckeditor.com/docs/ckeditor5/latest/features/font.html
+    gpl-compatible: true
+  js:
+    js/build/font.js: { preprocess: false, minified: true }
+admin:
+  js:
+    js/editor.js: { preprocess: false, minified: true }
+  css:
+    base:
+      css/fontcolor.css: { }
+      css/fontbackground.css: { }
+      css/editor.css: { }

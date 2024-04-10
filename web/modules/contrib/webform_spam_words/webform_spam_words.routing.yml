@@ -1,0 +1,7 @@
+webform_spam_words.config:
+  path: '/admin/config/webform/webform-spam-words'
+  defaults:
+    _form: '\Drupal\webform_spam_words\Form\BlockwordsConfigurationSettings'
+    _title: 'Webform Spam words'
+  requirements:
+    _permission: 'administer webform+edit webform spam words'
