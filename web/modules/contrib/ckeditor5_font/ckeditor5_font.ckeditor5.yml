@@ -1,0 +1,15 @@
+ckeditor5_font_colors:
+  ckeditor5:
+    plugins: [font.FontColor, font.FontBackgroundColor]
+  drupal:
+    label: Font Colors
+    elements:
+      - <p>
+    library: ckeditor5_font/ckeditor5_font
+    admin_library: ckeditor5_font/admin
+    class: Drupal\ckeditor5_font\FontColorsManager
+    toolbar_items:
+      fontColor:
+        label: Color
+      fontBackgroundColor:
+        label: Background

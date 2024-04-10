@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Implementations for the Webform spam words module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function webform_spam_words_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.webform_spam_words':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>';
+      $output .= t('The Webform Spam Words (WSW) module provides a framework for spam keywords validation on Webforms. Administrators can add spam keywords, error message and webform field names. For more information, see the <a href=":wsw">online documentation for the Webform Spam Words (WSW) module</a>.', [':wsw' => 'https://www.drupal.org/project/webform_spam_words']);
+      $output .= '</p>';
+      return $output;
+  }
+}

@@ -56,8 +56,7 @@
         "drupal/advagg": "^6.0@alpha",
         "drupal/metatag": "^2.0",
         "drupal/tfa": "^1.5",
-        "drupal/real_aes": "^2.5",
-        "drupal/config_ignore": "^2.4"
+        "drupal/real_aes": "^2.5"
     },
     "require-dev": {
         "drupal/core-dev": "^10.0"
@@ -73,7 +72,8 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "php-http/discovery": true
         },
         "sort-packages": true
     },

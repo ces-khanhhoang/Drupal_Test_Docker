@@ -1,0 +1,5 @@
+webform_spam_words.admin:
+  title: 'Webform spam words settings'
+  description: 'Configuration page for webform spam words.'
+  parent: system.admin_config_development
+  route_name: webform_spam_words.config

@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Installation hooks for Webform spam words module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function webform_spam_words_install() {
+  // Assign a weight 1 higher than webform module.
+  module_set_weight('webform_block_words', 1);
+}

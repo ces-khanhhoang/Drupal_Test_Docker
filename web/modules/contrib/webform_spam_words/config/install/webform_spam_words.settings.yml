@@ -1,0 +1,9 @@
+spam_words:
+  - SEO
+  - 'Digital Marketing'
+  - 'Click Here'
+  - unsubscribe
+  - FREE
+  - trial
+spam_text_message: 'Unable to submit form. Please contact the site administrator, if the problem persists.'
+spam_field_name: message
