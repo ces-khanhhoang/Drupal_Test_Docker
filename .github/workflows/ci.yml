@@ -35,10 +35,18 @@ jobs:
           tags: latest
           labels: latest
 
-      - name: Build and push Docker image
+      - name: Build and push Docker image latest
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Build and push Docker image new version
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: v1.0.1
+          labels: v1.0.1
