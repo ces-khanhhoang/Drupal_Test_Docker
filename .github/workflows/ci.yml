@@ -40,7 +40,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }},v1.0.1
-          labels: ${{ steps.meta.outputs.labels }},v1.0.1
-          secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.PACKAGES_TOKEN }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
