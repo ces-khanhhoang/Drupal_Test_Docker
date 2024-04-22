@@ -32,8 +32,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: latest,v1.0.1
-          labels: latest,v1.0.1
+          tags: latest
+          labels: latest
 
       - name: Build and push Docker image latest
         uses: docker/build-push-action@v5
@@ -42,3 +42,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }},v1.0.1
           labels: ${{ steps.meta.outputs.labels }},v1.0.1
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.PACKAGES_TOKEN }}
