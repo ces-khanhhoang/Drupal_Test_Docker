@@ -19,11 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         
-      - name: Set SHA as an environment variable
-        run: echo "The current commit SHA is $COMMIT_SHA"
-        env:
-          GITHUB_TAG_IMAGE: ${{ github.sha }}
-
       - name: Log in to the Container registry
         uses: docker/login-action@v3
         with:
@@ -36,7 +31,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: type=semver,pattern={{version}},value=${{ env.GITHUB_TAG_IMAGE }}
+          tags: |
+            type=sha,enable=true,priority=100,prefix=sha-,suffix=,format=short
 
       - name: Build and push Docker image latest
         uses: docker/build-push-action@v5
