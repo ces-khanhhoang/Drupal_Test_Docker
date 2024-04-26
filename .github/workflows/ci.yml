@@ -8,6 +8,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  GITHUB_TAG_IMAGE: $(git rev-parse --short "$GITHUB_SHA")
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
@@ -31,7 +32,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: type=semver,pattern={{version}},type=sha
+          tags: type=semver,pattern={{version}},value=${{ env.GITHUB_TAG_IMAGE }}
 
       - name: Build and push Docker image latest
         uses: docker/build-push-action@v5
