@@ -33,7 +33,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=semver,pattern={{version}}
-            type=sha,enable=true,priority=100,prefix=sha-,suffix=,format=short
+            type=sha,enable=true,priority=100,prefix=,suffix=,format=short
 
       - name: Build and push Docker image latest
         uses: docker/build-push-action@v5
