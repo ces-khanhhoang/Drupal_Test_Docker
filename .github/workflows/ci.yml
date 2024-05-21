@@ -21,8 +21,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Exit if not on master branch
-        if: endsWith(github.ref, 'release') == false
+      - name: Exit if not on release branch
+        if: endsWith(github.event.base_ref, 'release') == false
         run: exit -1
         
       - name: Log in to the Container registry
