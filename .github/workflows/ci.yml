@@ -6,8 +6,6 @@ on:
   push:
     tags:
       - prod.*
-    branches:
-      - main
 
 env:
   REGISTRY: ghcr.io
