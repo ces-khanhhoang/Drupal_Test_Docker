@@ -1,9 +1,13 @@
 name: Create and push Docker image to package
 
 on:
+  release:
+    types: [published]
   push:
     tags:
       - prod.*
+    branches:
+      - main
 
 env:
   REGISTRY: ghcr.io
