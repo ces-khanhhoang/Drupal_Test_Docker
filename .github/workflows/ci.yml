@@ -6,7 +6,6 @@ on:
   push:
     tags:
       - hotfix.*
-      - release.v*
 
 env:
   REGISTRY: ghcr.io
