@@ -5,7 +5,8 @@ on:
     types: [published]
   push:
     tags:
-      - prod.*
+      - hotfix.*
+      - release.v*
 
 env:
   REGISTRY: ghcr.io
@@ -24,22 +25,6 @@ jobs:
         with:
           fetch-depth: 0  # Ensure full history is fetched
 
-      - name: Get the commit SHA for the tag
-        id: get_commit
-        run: echo "::set-output name=commit_sha::$(git rev-list -n 1 ${{ github.ref }})"
-
-      - name: Get the branch name containing the commit
-        id: get_branch
-        run: |
-          COMMIT_SHA="${{ steps.get_commit.outputs.commit_sha }}"
-          BRANCH_NAME=$(git branch -r --contains "$COMMIT_SHA" | grep -v '\->' | grep 'origin/' | head -n 1 | sed 's|origin/||')
-          echo "Branch name: $BRANCH_NAME"
-          echo "::set-output name=branch_name::$BRANCH_NAME"
-      
-      - name: Exit if not on main branch
-        if: steps.get_branch.outputs.branch_name != 'main'
-        run: exit -1
-        
       - name: Log in to the Container registry
         uses: docker/login-action@v3
         with:
