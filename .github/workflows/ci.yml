@@ -20,13 +20,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Exit if not on master branch
+        if: endsWith(github.ref, 'release') == false
+        run: exit -1
         
       - name: Log in to the Container registry
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ secrets.PACKAGES_TOKEN }}
+          password: ${{secrets.GITHUB_TOKEN}}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
