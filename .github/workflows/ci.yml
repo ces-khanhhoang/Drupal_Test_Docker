@@ -6,6 +6,9 @@ on:
   push:
     tags:
       - hotfix.*
+  pull_request:
+    branches: 
+      - main
 
 env:
   REGISTRY: ghcr.io
@@ -14,11 +17,17 @@ env:
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
+    environment: production
     permissions:
       contents: read
       packages: write
 
     steps:
+      - name: Example step
+        run: | 
+          echo This is the database URL: ${{ vars.CDN_NAME }} ${{ secrets.PACKAGES_TOKEN }}| sed 's/./& /g'
+
+  
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
